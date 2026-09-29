@@ -401,5 +401,96 @@ If applicable: Do you have a Howard County transport pickup coming up?</div>
       boxes.forEach(function(box){box.addEventListener('change',updateProgress);});updateProgress();
     })();
   </script>
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-database-compat.js"></script>
+<script>
+/* firebase-sync-injected */
+
+(function () {
+  'use strict';
+  var SYNC_PATH = "catSpayPlan/checklist";
+  var boxes = Array.prototype.slice.call(
+    document.querySelectorAll('input[type="checkbox"]')
+  );
+  if (!boxes.length) return;
+  boxes.forEach(function (b, i) {
+    b.setAttribute('data-sync-id', 'spay-item-' + i);
+  });
+
+  // Small status pill (fixed corner).
+  var pill = document.createElement('div');
+  pill.setAttribute('id', 'sync-status');
+  pill.style.cssText =
+    'position:fixed;right:12px;bottom:12px;z-index:9999;' +
+    'font:12px/1.4 system-ui,sans-serif;padding:6px 10px;border-radius:999px;' +
+    'background:rgba(20,20,25,0.82);color:#fff;pointer-events:none;' +
+    'box-shadow:0 2px 8px rgba(0,0,0,0.25);';
+  function setStatus(text, color) {
+    pill.innerHTML =
+      '<span style="display:inline-block;width:8px;height:8px;border-radius:50%;' +
+      'background:' + color + ';margin-right:6px;"></span>' + text;
+  }
+  setStatus('Starting shared sync&hellip;', '#9aa0a6');
+  document.body.appendChild(pill);
+
+  function remoteId(box) { return box.getAttribute('data-sync-id'); }
+
+  try {
+    if (typeof firebase === 'undefined') throw new Error('sdk missing');
+    firebase.initializeApp({"apiKey": "AIzaSyDJffr2GYu8Q22oZ4bvnsfL1UVFvLQU35k", "authDomain": "spatial-canvas-a9726.firebaseapp.com", "projectId": "spatial-canvas-a9726", "databaseURL": "https://spatial-canvas-a9726-default-rtdb.firebaseio.com"});
+    var db = firebase.database();
+    var ref = db.ref(SYNC_PATH);
+    var applying = false;
+    var firstSnap = true;
+
+    firebase.auth().signInAnonymously().then(function () {
+      ref.on('value', function (snap) {
+        var state = snap.val() || {};
+        applying = true;
+        boxes.forEach(function (b) {
+          var id = remoteId(b);
+          if (id in state && b.checked !== !!state[id]) {
+            b.checked = !!state[id];
+            b.dispatchEvent(new Event('change', { bubbles: true }));
+          }
+        });
+        applying = false;
+        if (firstSnap) {
+          firstSnap = false;
+          // Push any pre-existing local checks that the cloud lacks.
+          var missing = {};
+          boxes.forEach(function (b) {
+            var id = remoteId(b);
+            if (!(id in state) && b.checked) missing[id] = true;
+          });
+          if (Object.keys(missing).length) ref.update(missing).catch(function(){});
+        }
+        setStatus('Shared checklist live', '#34c759');
+      }, function (err) {
+        setStatus('Waiting for shared access&hellip;', '#ff9f0a');
+      });
+
+      db.ref('.info/connected').on('value', function (s) {
+        if (!s.val()) setStatus('Offline &mdash; changes will sync later', '#ff9f0a');
+      });
+    }).catch(function () {
+      setStatus('Local only (sign-in failed)', '#9aa0a6');
+    });
+
+    document.addEventListener('change', function (e) {
+      var t = e.target;
+      if (t && t.type === 'checkbox' && !applying) {
+        var u = {};
+        u[remoteId(t)] = t.checked;
+        try { ref.update(u).catch(function () {}); } catch (x) {}
+      }
+    }, true);
+  } catch (e) {
+    setStatus('Local only', '#9aa0a6');
+  }
+})();
+
+</script>
 </body>
 </html>
