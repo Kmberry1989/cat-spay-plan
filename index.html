@@ -116,7 +116,37 @@
     .phase h3{font-size:1.14rem;margin-bottom:10px}
     .phase ul{margin:0;padding-left:20px;color:var(--muted)}
     .phase li+li{margin-top:8px}
-    .ruled-out{margin-top:46px;padding:24px;background:var(--surface-2);border-radius:18px}.ruled-out h2{font-size:1.5rem;margin:6px 0 18px}.ruled-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.ruled-grid div{display:grid;gap:4px}.ruled-grid span{color:var(--muted)}
+    .rank-hint{margin-top:10px;font-size:.92rem}
+    .rank-controls{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+    .drag-handle{cursor:grab;font-size:1.05rem;letter-spacing:1px;color:var(--muted);padding:8px 10px;border:1px dashed var(--line);border-radius:9px;user-select:none;-webkit-user-select:none;touch-action:none;line-height:1}
+    .drag-handle:active{cursor:grabbing}
+    .rank-label{font-size:.8rem;font-weight:700;color:var(--muted)}
+    .rank-label b{color:var(--ink)}
+    .rank-btns{margin-left:auto;display:flex;gap:6px}
+    .rank-btn{width:40px;height:40px;border-radius:10px;border:1px solid var(--line);background:var(--surface-2);color:var(--ink);font-size:.85rem;cursor:pointer;line-height:1}
+    .rank-btn:disabled{opacity:.35;cursor:default}
+    .option.dragging{opacity:.4}
+    .option.drop-before{box-shadow:0 -5px 0 0 var(--teal)}
+    .option.drop-after{box-shadow:0 5px 0 0 var(--teal)}
+    .best .rank-label{color:rgba(255,255,255,.72)}
+    .best .rank-label b{color:#fff}
+    .best .drag-handle{color:rgba(255,255,255,.85);border-color:rgba(255,255,255,.4)}
+    .best .rank-btn{background:rgba(255,255,255,.14);border-color:transparent;color:#fff}
+    .matrix-section{margin-top:48px}
+    .matrix-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:18px;background:var(--surface);box-shadow:var(--shadow)}
+    table.matrix{border-collapse:separate;border-spacing:0;width:100%;min-width:660px}
+    .matrix th,.matrix td{padding:12px 14px;text-align:center;font-size:.92rem;border-bottom:1px solid var(--line);vertical-align:middle}
+    .matrix thead th{background:var(--surface-2);font-weight:800}
+    .matrix thead th:first-child{text-align:left;color:var(--muted);font-size:.8rem;text-transform:uppercase;letter-spacing:.06em}
+    .m-price{display:block;font-family:"Libre Franklin",sans-serif;font-size:1.1rem;margin-top:4px;color:var(--teal-dark)}
+    .m-sub{display:block;font-size:.76rem;font-weight:600;color:var(--muted);margin-top:3px}
+    .matrix tbody th{position:sticky;left:0;background:var(--surface);text-align:left;font-weight:700;min-width:180px;box-shadow:1px 0 0 var(--line);z-index:1}
+    .matrix tbody tr:last-child th,.matrix tbody tr:last-child td{border-bottom:0}
+    .mark-yes{display:inline-grid;place-items:center;width:27px;height:27px;border-radius:50%;background:var(--teal);color:#fff;font-weight:900;font-size:.95rem}
+    .mark-no{color:var(--muted);font-weight:700}
+    .mark-unknown{display:inline-grid;place-items:center;width:27px;height:27px;border-radius:50%;border:2px dashed var(--line);color:var(--muted);font-weight:800;font-size:.95rem}
+    .matrix-legend{list-style:none;display:flex;flex-wrap:wrap;gap:8px 20px;margin:14px 0 0;padding:0;color:var(--muted);font-size:.88rem}
+    .matrix-legend li{display:flex;align-items:center;gap:8px}
     .sources{margin-top:48px;padding-top:24px;border-top:1px solid var(--line)}
     .sources h2{font-size:1.3rem;margin-bottom:12px}
     .source-links{display:flex;gap:10px;flex-wrap:wrap}
@@ -128,7 +158,7 @@
       .hero{grid-template-columns:1fr}.hero-art{min-height:320px}.steps{grid-template-columns:1fr}.step{min-height:auto}.options{grid-template-columns:1fr 1fr}.panel-grid{grid-template-columns:1fr}
     }
     @media(max-width:620px){
-      .shell{padding-inline:14px}.topline{align-items:flex-start}.cost-chip{font-size:.82rem}.hero-art{min-height:260px;border-radius:22px 8px 22px 22px}.options{grid-template-columns:1fr}.workspace-nav{overflow:visible;flex-wrap:wrap}.tab{flex:1 1 45%;font-size:.9rem}.panel{padding:20px 16px}.form{grid-template-columns:1fr}.form label{grid-column:1}.surgery-grid{grid-template-columns:1fr}.section-head{display:block}.section-head p{margin-top:8px}.progress-card{margin-top:14px}.timeline:before{left:17px}.plan-step{margin-left:38px;padding:18px 14px}.plan-step .step-number{left:-37px;top:18px;width:30px;height:30px}.call-grid,.ruled-grid{grid-template-columns:1fr}.inline-actions{display:grid}.button{width:100%}.hero-actions{display:grid}.step .button{width:100%}.copy-row{display:grid}.source-links{display:grid}.art-note{font-size:.85rem}
+      .shell{padding-inline:14px}.topline{align-items:flex-start}.cost-chip{font-size:.82rem}.hero-art{min-height:260px;border-radius:22px 8px 22px 22px}.options{grid-template-columns:1fr}.workspace-nav{overflow:visible;flex-wrap:wrap}.tab{flex:1 1 45%;font-size:.9rem}.panel{padding:20px 16px}.form{grid-template-columns:1fr}.form label{grid-column:1}.surgery-grid{grid-template-columns:1fr}.section-head{display:block}.section-head p{margin-top:8px}.progress-card{margin-top:14px}.timeline:before{left:17px}.plan-step{margin-left:38px;padding:18px 14px}.plan-step .step-number{left:-37px;top:18px;width:30px;height:30px}.call-grid{grid-template-columns:1fr}.inline-actions{display:grid}.button{width:100%}.hero-actions{display:grid}.step .button{width:100%}.copy-row{display:grid}.source-links{display:grid}.art-note{font-size:.85rem}
     }
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.toast{transition:none}}
   </style>
@@ -166,6 +196,7 @@
       <div class="section-head">
         <h2 id="shortlist-title">Clinic shortlist</h2>
         <p><strong>Bottom line:</strong> apply for SNAP on October 5 ($100 total — cheapest), and first call the Low Cost Spay Neuter Clinic transport line at <a href="tel:+13176750072">(317) 675-0072</a> to lock in the $180 backup date. Cancel the backup if the SNAP certificates come through.</p>
+        <p class="rank-hint"><strong>Rank your favorites:</strong> drag a card by its ⋮⋮ handle, or tap the ▲ ▼ buttons — your order syncs live to both phones.</p>
       </div>
       <div class="options">
         <article class="option best">
@@ -203,6 +234,43 @@
           <a class="button secondary" href="tel:+17654506750">Call (765) 450-6750</a>
         </article>
       </div>
+    </section>
+    <section class="matrix-section" aria-labelledby="matrix-title">
+      <div class="section-head">
+        <h2 id="matrix-title">What each price covers</h2>
+        <p>Side-by-side check of what's included in each option's quoted price. A <strong>?</strong> means it wasn't published — ask about it when you call.</p>
+      </div>
+      <div class="matrix-wrap">
+        <table class="matrix">
+          <thead>
+            <tr>
+              <th scope="col">Included care</th>
+              <th scope="col">SNAP certificate<span class="m-price">$100 total</span><span class="m-sub">at Animal Wellness Center, Kokomo · extras may apply</span></th>
+              <th scope="col">Low Cost Spay Neuter Clinic<span class="m-price">$180 total</span><span class="m-sub">Noblesville · Kokomo transport</span></th>
+              <th scope="col">Kokomo Humane / Public Vet<span class="m-price">≈ $200 total</span><span class="m-sub">Feline Day events</span></th>
+              <th scope="col">4 Precious Paws<span class="m-price">$240 total</span><span class="m-sub">bundle price</span></th>
+              <th scope="col">IndyHumane Downtown<span class="m-price">$260 total</span><span class="m-sub">$70 deposit per cat</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">Spay surgery</th><td><span class="mark-yes" title="Included in the quoted price">✓</span></td><td><span class="mark-yes" title="Included in the quoted price">✓</span></td><td><span class="mark-yes" title="Included in the quoted price">✓</span></td><td><span class="mark-yes" title="Included in the quoted price">✓</span></td><td><span class="mark-yes" title="Included in the quoted price">✓</span></td></tr>
+            <tr><th scope="row">Take-home pain medication</th><td><span class="mark-unknown" title="Not confirmed — ask when you call">?</span></td><td><span class="mark-unknown" title="Not confirmed — ask when you call">?</span></td><td><span class="mark-unknown" title="Not confirmed — ask when you call">?</span></td><td><span class="mark-yes" title="Included in the quoted price">✓</span></td><td><span class="mark-yes" title="Included in the quoted price">✓</span></td></tr>
+            <tr><th scope="row">E-collar / cone</th><td><span class="mark-unknown" title="Not confirmed — ask when you call">?</span></td><td><span class="mark-unknown" title="Not confirmed — ask when you call">?</span></td><td><span class="mark-unknown" title="Not confirmed — ask when you call">?</span></td><td><span class="mark-unknown" title="Not confirmed — ask when you call">?</span></td><td><span class="mark-yes" title="Included in the quoted price">✓</span></td></tr>
+            <tr><th scope="row">Rabies vaccine</th><td><span class="mark-unknown" title="Not confirmed — ask when you call">?</span></td><td><span class="mark-unknown" title="Not confirmed — ask when you call">?</span></td><td><span class="mark-unknown" title="Not confirmed — ask when you call">?</span></td><td><span class="mark-yes" title="Included in the quoted price">✓</span></td><td><span class="mark-unknown" title="Not confirmed — ask when you call">?</span></td></tr>
+            <tr><th scope="row">FVRCP vaccine</th><td><span class="mark-unknown" title="Not confirmed — ask when you call">?</span></td><td><span class="mark-unknown" title="Not confirmed — ask when you call">?</span></td><td><span class="mark-unknown" title="Not confirmed — ask when you call">?</span></td><td><span class="mark-yes" title="Included in the quoted price">✓</span></td><td><span class="mark-unknown" title="Not confirmed — ask when you call">?</span></td></tr>
+            <tr><th scope="row">Parasite prevention / dewormer</th><td><span class="mark-unknown" title="Not confirmed — ask when you call">?</span></td><td><span class="mark-unknown" title="Not confirmed — ask when you call">?</span></td><td><span class="mark-unknown" title="Not confirmed — ask when you call">?</span></td><td><span class="mark-yes" title="Included in the quoted price">✓</span></td><td><span class="mark-unknown" title="Not confirmed — ask when you call">?</span></td></tr>
+            <tr><th scope="row">Pre-surgery exam</th><td><span class="mark-unknown" title="Not confirmed — ask when you call">?</span></td><td><span class="mark-unknown" title="Not confirmed — ask when you call">?</span></td><td><span class="mark-unknown" title="Not confirmed — ask when you call">?</span></td><td><span class="mark-unknown" title="Not confirmed — ask when you call">?</span></td><td><span class="mark-unknown" title="Not confirmed — ask when you call">?</span></td></tr>
+            <tr><th scope="row">Booking deposit</th><td><span class="mark-unknown" title="Not confirmed — ask when you call">?</span></td><td><span class="mark-unknown" title="Not confirmed — ask when you call">?</span></td><td><span class="mark-yes" title="Included in the quoted price">✓</span></td><td><span class="mark-unknown" title="Not confirmed — ask when you call">?</span></td><td><span class="mark-yes" title="Included in the quoted price">✓</span></td></tr>
+            <tr><th scope="row">Transport from Kokomo area</th><td><span class="mark-no" title="Not included / not offered">—</span></td><td><span class="mark-yes" title="Included in the quoted price">✓</span></td><td><span class="mark-no" title="Not included / not offered">—</span></td><td><span class="mark-no" title="Not included / not offered">—</span></td><td><span class="mark-no" title="Not included / not offered">—</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <ul class="matrix-legend">
+        <li><span class="mark-yes">✓</span> Included in the quoted price</li>
+        <li><span class="mark-no">—</span> Not included / not offered</li>
+        <li><span class="mark-unknown">?</span> Not confirmed — ask when you call</li>
+      </ul>
+      <p class="fine">Prices observed September 29, 2026 — confirm the current quote and what's included before booking. Deposits apply to the bill: Kokomo Humane $10 per cat · IndyHumane $70 per cat.</p>
     </section>
     <section class="route" id="application-helper" aria-labelledby="route-title">
       <div class="section-head">
@@ -400,15 +468,6 @@ If applicable: Do you have a Howard County transport pickup coming up?</div>
       </div>
     </section>
 
-    <section class="ruled-out" aria-labelledby="ruled-title">
-      <div class="eyebrow">Checked and ruled out</div>
-      <h2 id="ruled-title">Two names that do not add a new Indiana option</h2>
-      <div class="ruled-grid">
-        <div><strong>Friends of Felines</strong><span>No Indiana presence was found.</span></div>
-        <div><strong>Alley Cat clinics</strong><span>The clinics are Ohio-only; their Indiana directory points back to 4 Precious Paws and Animal Wellness Center for Howard County.</span></div>
-      </div>
-    </section>
-
     <section class="sources" aria-labelledby="source-title">
       <h2 id="source-title">Official links</h2>
       <div class="source-links">
@@ -533,6 +592,188 @@ If applicable: Do you have a Howard County transport pickup coming up?</div>
   }
 })();
 
+</script>
+<script>
+/* provider-rank-sync: drag + up/down ranking of the clinic shortlist,
+   shared live between both phones via Firebase RTDB. */
+(function () {
+  'use strict';
+  var ORDER_PATH = 'catSpayPlan/providerOrder';
+  var section = document.getElementById('clinic-shortlist');
+  if (!section) return;
+  var list = section.querySelector('.options');
+  if (!list) return;
+  var initialCards = Array.prototype.slice.call(list.querySelectorAll('.option'));
+  if (!initialCards.length) return;
+
+  var PROVIDER_IDS = ['snap', 'lowcost', 'humane', 'paws4'];
+  var PROVIDER_NAMES = {
+    snap: 'SNAP certificates',
+    lowcost: 'Low Cost Spay Neuter Clinic',
+    humane: 'Kokomo Humane / Public Vet',
+    paws4: '4 Precious Paws'
+  };
+
+  initialCards.forEach(function (card, i) {
+    var id = PROVIDER_IDS[i] || ('provider-' + i);
+    card.setAttribute('data-provider', id);
+    var tag = card.querySelector('.tag');
+    var desc = tag ? tag.textContent.replace(/^\s*\d+\s*·\s*/, '') : '';
+    card.setAttribute('data-tag-desc', desc);
+    card.setAttribute('draggable', 'true');
+    var controls = document.createElement('div');
+    controls.className = 'rank-controls';
+    var label = PROVIDER_NAMES[id] || 'option';
+    controls.innerHTML =
+      '<span class="drag-handle" title="Drag to reorder" aria-hidden="true">⋮⋮</span>' +
+      '<span class="rank-label">Rank <b class="rank-num">' + (i + 1) + '</b> of ' + initialCards.length + '</span>' +
+      '<span class="rank-btns">' +
+      '<button type="button" class="rank-btn rank-up" aria-label="Move ' + label + ' up">▲</button>' +
+      '<button type="button" class="rank-btn rank-down" aria-label="Move ' + label + ' down">▼</button>' +
+      '</span>';
+    card.insertBefore(controls, card.firstChild);
+  });
+
+  function orderedCards() {
+    return Array.prototype.slice.call(list.querySelectorAll('.option'));
+  }
+  function currentOrder() {
+    return orderedCards().map(function (c) { return c.getAttribute('data-provider'); });
+  }
+  function sameOrder(a, b) {
+    return a.length === b.length && a.every(function (v, i) { return v === b[i]; });
+  }
+  function renderOrder() {
+    var cs = orderedCards();
+    cs.forEach(function (card, i) {
+      var num = card.querySelector('.rank-num');
+      if (num) num.textContent = String(i + 1);
+      var tag = card.querySelector('.tag');
+      if (tag) tag.textContent = (i + 1) + ' · ' + card.getAttribute('data-tag-desc');
+      card.classList.toggle('best', i === 0);
+      var up = card.querySelector('.rank-up');
+      var down = card.querySelector('.rank-down');
+      if (up) up.disabled = (i === 0);
+      if (down) down.disabled = (i === cs.length - 1);
+    });
+  }
+  function applyOrder(order) {
+    var byId = {};
+    orderedCards().forEach(function (c) { byId[c.getAttribute('data-provider')] = c; });
+    order.forEach(function (id) {
+      if (byId[id]) { list.appendChild(byId[id]); delete byId[id]; }
+    });
+    Object.keys(byId).forEach(function (id) { list.appendChild(byId[id]); });
+    renderOrder();
+  }
+
+  var orderRef = null;
+  var remoteApplying = false;
+  function commitOrder() {
+    if (orderRef && !remoteApplying) {
+      try { orderRef.set(currentOrder()).catch(function () {}); } catch (x) {}
+    }
+  }
+
+  /* Up / down buttons (primary control on touch screens). */
+  list.addEventListener('click', function (e) {
+    var btn = (e.target && e.target.closest) ? e.target.closest('.rank-up,.rank-down') : null;
+    if (!btn || btn.disabled) return;
+    var card = btn.closest('.option');
+    if (!card) return;
+    if (btn.classList.contains('rank-up')) {
+      var prev = card.previousElementSibling;
+      if (prev) list.insertBefore(card, prev);
+    } else {
+      var next = card.nextElementSibling;
+      if (next) list.insertBefore(next, card);
+    }
+    renderOrder();
+    commitOrder();
+  });
+
+  /* Drag and drop (desktop): drag starts only from the handle. */
+  var dragCard = null, isDragging = false, pendingOrder = null;
+  function clearDropMarks() {
+    Array.prototype.forEach.call(list.querySelectorAll('.drop-before,.drop-after'), function (c) {
+      c.classList.remove('drop-before'); c.classList.remove('drop-after');
+    });
+  }
+  initialCards.forEach(function (card) {
+    card.addEventListener('dragstart', function (e) {
+      var fromHandle = e.target.closest && e.target.closest('.drag-handle');
+      if (!fromHandle) { e.preventDefault(); return; }
+      dragCard = card; isDragging = true;
+      e.dataTransfer.effectAllowed = 'move';
+      try { e.dataTransfer.setData('text/plain', card.getAttribute('data-provider')); } catch (x) {}
+    });
+    card.addEventListener('dragend', function () {
+      card.classList.remove('dragging');
+      clearDropMarks();
+      isDragging = false; dragCard = null;
+      if (pendingOrder) { var o = pendingOrder; pendingOrder = null; applyOrder(o); }
+      else { renderOrder(); commitOrder(); }
+    });
+    card.addEventListener('dragover', function (e) {
+      if (!dragCard || dragCard === card) return;
+      e.preventDefault(); e.stopPropagation();
+      try { e.dataTransfer.dropEffect = 'move'; } catch (x) {}
+      var rect = card.getBoundingClientRect();
+      var before = (e.clientY - rect.top) < rect.height / 2;
+      card.classList.toggle('drop-before', before);
+      card.classList.toggle('drop-after', !before);
+    });
+    card.addEventListener('dragleave', function () {
+      card.classList.remove('drop-before'); card.classList.remove('drop-after');
+    });
+    card.addEventListener('drop', function (e) {
+      if (!dragCard || dragCard === card) return;
+      e.preventDefault(); e.stopPropagation();
+      var rect = card.getBoundingClientRect();
+      var before = (e.clientY - rect.top) < rect.height / 2;
+      if (before) list.insertBefore(dragCard, card);
+      else list.insertBefore(dragCard, card.nextSibling);
+    });
+  });
+  list.addEventListener('dragover', function (e) { e.preventDefault(); });
+  list.addEventListener('drop', function (e) {
+    e.preventDefault();
+    if (dragCard) list.appendChild(dragCard);
+  });
+
+  renderOrder();
+
+  /* Shared order sync. Waits for the Firebase app the checklist sync initializes. */
+  function startSync() {
+    function go() {
+      var ref = firebase.database().ref(ORDER_PATH);
+      orderRef = ref;
+      ref.on('value', function (snap) {
+        var order = snap.val();
+        if (!Array.isArray(order) || !order.length) { commitOrder(); return; }
+        if (sameOrder(order, currentOrder())) return;
+        if (isDragging) { pendingOrder = order; return; }
+        remoteApplying = true;
+        applyOrder(order);
+        remoteApplying = false;
+      });
+    }
+    try {
+      var auth = firebase.auth();
+      if (auth.currentUser) { go(); return; }
+      var off = auth.onAuthStateChanged(function (u) {
+        if (u) { try { off(); } catch (x) {} go(); }
+      });
+      auth.signInAnonymously().catch(function () {});
+    } catch (x) { /* local-only ranking still works */ }
+  }
+  var tries = 0;
+  var iv = setInterval(function () {
+    tries++;
+    if (window.firebase && firebase.apps && firebase.apps.length) { clearInterval(iv); startSync(); }
+    else if (tries > 120) { clearInterval(iv); }
+  }, 250);
+})();
 </script>
 </body>
 </html>
