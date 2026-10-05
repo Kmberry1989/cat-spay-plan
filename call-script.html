@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Spay Call Script — One Page</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; color: #1c2333; background: #f6f7f9; line-height: 1.5; }
+  .page { max-width: 760px; margin: 0 auto; padding: 1.4rem 1.2rem 3rem; }
+  header { border-bottom: 3px solid #143d2b; padding-bottom: 0.8rem; margin-bottom: 1rem; }
+  header h1 { font-size: 1.35rem; }
+  header p { font-size: 0.88rem; color: #667085; margin-top: 0.25rem; }
+  .opener { background: #eef5f0; border-radius: 10px; padding: 0.9rem 1rem; font-size: 0.92rem; margin-bottom: 1rem; font-style: italic; }
+  h2 { font-size: 1rem; color: #143d2b; margin: 1.1rem 0 0.4rem; text-transform: uppercase; letter-spacing: 0.05em; }
+  ol.q { list-style: none; counter-reset: q; }
+  ol.q li { counter-increment: q; background: #fff; border: 1px solid #e2e6ec; border-radius: 10px; padding: 0.65rem 0.9rem 0.65rem 3rem; margin-bottom: 0.5rem; position: relative; font-size: 0.93rem; }
+  ol.q li::before { content: counter(q); position: absolute; left: 0.9rem; top: 0.6rem; background: #143d2b; color: #fff; font-weight: 800; font-size: 0.8rem; width: 1.5rem; height: 1.5rem; border-radius: 999px; display: flex; align-items: center; justify-content: center; }
+  .answer { display: block; margin-top: 0.35rem; border-bottom: 1px dotted #b6bfcc; min-height: 1.4em; font-size: 0.85rem; color: #98a2b3; }
+  .facts { background: #fff8e6; border: 1px solid #f0dfae; border-radius: 10px; padding: 0.8rem 1rem; font-size: 0.88rem; margin-top: 1rem; }
+  .facts b { color: #8a5a00; }
+  footer { text-align: center; color: #98a2b3; font-size: 0.78rem; margin-top: 1.2rem; }
+  @media print {
+    body { background: #fff; }
+    .page { padding: 0; max-width: none; }
+    ol.q li { break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+  <header>
+    <h1>📞 Spay Call Script — Two Sister Cats</h1>
+    <p>Ask every clinic the same questions. Fill in the answers as you go.</p>
+  </header>
+
+  <div class="opener">
+    "Hi — I have two indoor sister cats I need spayed. I have SNAP certificates from Pet Friendly Services on the way by mail — the $100 copay is already paid, receipt #1858-9799. Can I book while the certificates are in transit?"
+  </div>
+
+  <h2>SNAP acceptance</h2>
+  <ol class="q">
+    <li>Do you accept Pet Friendly Services SNAP certificates? <span class="answer">Answer:</span></li>
+    <li>These are owned indoor cats — no ear tip needed, correct? <span class="answer">Answer:</span></li>
+    <li>Can I schedule now and bring the certificates when they arrive by mail? <span class="answer">Answer:</span></li>
+  </ol>
+
+  <h2>Pricing — total per cat</h2>
+  <ol class="q" style="counter-reset: q 3">
+    <li>With the SNAP certificate, what is my total out-of-pocket per cat? <span class="answer">Answer:</span></li>
+    <li>Is there an exam fee, and is it required before surgery day? <span class="answer">Answer:</span></li>
+    <li>Are take-home pain meds and an e-collar included or extra? <span class="answer">Answer:</span></li>
+    <li>Any other fees — bloodwork, vaccines required day-of? <span class="answer">Answer:</span></li>
+  </ol>
+
+  <h2>Booking</h2>
+  <ol class="q" style="counter-reset: q 7">
+    <li>What is your first available date for <b>two</b> cats? Can both be done the same day? <span class="answer">Answer:</span></li>
+    <li>What are drop-off and pick-up times? <span class="answer">Answer:</span></li>
+    <li>Do you keep a cancellation list I can join for an earlier spot? <span class="answer">Answer:</span></li>
+  </ol>
+
+  <h2>Records &amp; no-show terms</h2>
+  <ol class="q" style="counter-reset: q 10">
+    <li>What records do you need — vaccination history, proof of ownership, photo ID? <span class="answer">Answer:</span></li>
+    <li>What is your cancellation / no-show policy? (SNAP voids the certificate on a no-show without 48 hours' notice — no refund.) <span class="answer">Answer:</span></li>
+    <li>Is a deposit required to hold the booking? <span class="answer">Answer:</span></li>
+  </ol>
+
+  <div class="facts">
+    <b>Have ready:</b> SNAP receipt #1858-9799 (Oct 4, $100 paid, card ending 5156) · your photo ID · any vet/vaccine records for the cats · the certificates when they arrive (USPS, within 30 days).
+  </div>
+
+  <footer>One page · print me · Oct 5, 2026</footer>
+</div>
+</body>
+</html>
